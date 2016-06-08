@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav role="navigation" class="clearfix">
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'myaims' %}">Мои цели</a></li>
+                        <li><a href="{% url 'post_list' %}">Блог</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Вход</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
